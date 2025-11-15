@@ -1,14 +1,12 @@
-using Baubit.Traceability.Reasons;
-
-namespace Baubit.Traceability.Tests.Reasons
+﻿namespace Baubit.Traceability.Tests.Reasons.AReason
 {
-    public class AReasonTests
+    public class Test
     {
-        private class TestReason : AReason
+        private class TestReason : Traceability.Reasons.AReason
         {
             public TestReason() : base() { }
-            
-            public TestReason(string message, Dictionary<string, object> metadata) 
+
+            public TestReason(string message, Dictionary<string, object> metadata)
                 : base(message, metadata)
             {
             }

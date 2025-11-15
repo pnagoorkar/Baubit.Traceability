@@ -1,12 +1,11 @@
-using Baubit.Traceability;
-using Baubit.Traceability.Exceptions;
+﻿using Baubit.Traceability.Exceptions;
 using Baubit.Traceability.Reasons;
 using Baubit.Traceability.Successes;
 using FluentResults;
 
-namespace Baubit.Traceability.Tests.Extensions
+namespace Baubit.Traceability.Tests.Extensions.TraceabilityExtensions
 {
-    public class TraceabilityExtensionsTests
+    public class Test
     {
         private class TestSuccess : ASuccess
         {
@@ -162,7 +161,7 @@ namespace Baubit.Traceability.Tests.Extensions
             ISuccess success = new TestSuccess("Operation succeeded");
 
             // Act
-            var modifiedResult = TraceabilityExtensions.AddSuccessIfPassed<Result<int>, int>(result, success);
+            var modifiedResult = Traceability.TraceabilityExtensions.AddSuccessIfPassed<Result<int>, int>(result, success);
 
             // Assert
             Assert.True(modifiedResult.IsSuccess);
@@ -177,7 +176,7 @@ namespace Baubit.Traceability.Tests.Extensions
             ISuccess success = new TestSuccess("Operation succeeded");
 
             // Act
-            var modifiedResult = TraceabilityExtensions.AddSuccessIfPassed<Result<int>, int>(result, success);
+            var modifiedResult = Traceability.TraceabilityExtensions.AddSuccessIfPassed<Result<int>, int>(result, success);
 
             // Assert
             Assert.True(modifiedResult.IsFailed);
@@ -406,7 +405,7 @@ namespace Baubit.Traceability.Tests.Extensions
             // Arrange
             var innerResult = Result.Fail("Inner failure")
                 .WithReason(new TestReason("Inner reason"));
-            
+
             var exception = new FailedOperationException(innerResult);
             var outerResult = Result.Try((Action)(() => { throw exception; }));
 

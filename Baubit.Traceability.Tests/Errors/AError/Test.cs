@@ -1,9 +1,9 @@
-using Baubit.Traceability.Exceptions;
+﻿using Baubit.Traceability.Exceptions;
 using FluentResults;
 
-namespace Baubit.Traceability.Tests.Exceptions
+namespace Baubit.Traceability.Tests.Errors.AError
 {
-    public class FailedOperationExceptionTests
+    public class Test
     {
         [Fact]
         public void Constructor_StoresResultAndSetsMessage()

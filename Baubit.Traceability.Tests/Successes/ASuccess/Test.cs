@@ -1,15 +1,14 @@
-using Baubit.Traceability.Successes;
-using FluentResults;
+﻿using FluentResults;
 
-namespace Baubit.Traceability.Tests.Successes
+namespace Baubit.Traceability.Tests.Successes.ASuccess
 {
-    public class ASuccessTests
+    public class Test
     {
-        private class TestSuccess : ASuccess
+        private class TestSuccess : Traceability.Successes.ASuccess
         {
             public TestSuccess() : base() { }
-            
-            public TestSuccess(string message, Dictionary<string, object> metadata) 
+
+            public TestSuccess(string message, Dictionary<string, object> metadata)
                 : base(message, metadata)
             {
             }
