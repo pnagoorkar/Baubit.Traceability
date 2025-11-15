@@ -17,7 +17,6 @@ A lightweight .NET library for building robust error handling and result tracing
 - 🛡️ **Type-Safe Error Handling** - Leverage .NET type system for robust error handling
 - 🔄 **FluentResults Integration** - Seamlessly extends FluentResults with additional functionality
 - 📦 **Zero Configuration** - Works out of the box with sensible defaults
-- ✅ **100% Test Coverage** - Thoroughly tested with comprehensive unit tests
 
 ## Installation
 
