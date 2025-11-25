@@ -1,8 +1,11 @@
 # Baubit.Traceability
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/pnagoorkar/Baubit.Traceability/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/pnagoorkar/Baubit.Traceability/tree/master)
-[![NuGet](https://img.shields.io/nuget/v/Baubit.Traceability.svg)](https://www.nuget.org/packages/Baubit.Traceability)
-[![codecov](https://codecov.io/gh/pnagoorkar/Baubit.Traceability/branch/master/graph/badge.svg)](https://codecov.io/gh/pnagoorkar/Baubit.Traceability)
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/TpM4QUH8Djox7cjDaNpup5/2zTgJzKbD2m3nXCf5LKvqS/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/TpM4QUH8Djox7cjDaNpup5/2zTgJzKbD2m3nXCf5LKvqS/tree/master)
+[![codecov](https://codecov.io/gh/pnagoorkar/Baubit.Traceability/branch/master/graph/badge.svg)](https://codecov.io/gh/pnagoorkar/Baubit.Traceability)<br/>
+[![NuGet](https://img.shields.io/nuget/v/Baubit.Traceability.svg)](https://www.nuget.org/packages/Baubit.Traceability/)
+![.NET Standard 2.0](https://img.shields.io/badge/.NET%20Standard-2.0-512BD4?logo=dotnet&logoColor=white)<br/>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Known Vulnerabilities](https://snyk.io/test/github/pnagoorkar/Baubit.Traceability/badge.svg)](https://snyk.io/test/github/pnagoorkar/Baubit.Traceability)
 
 A lightweight .NET library for building robust error handling and result tracing in .NET applications using the FluentResults pattern.
 
@@ -246,42 +249,6 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 3. Maintain 100% code coverage
 4. Follow existing code style and conventions
 5. Update documentation for API changes
-
-## CI/CD Pipeline
-
-This project uses CircleCI for continuous integration:
-
-1. **Build** - Compiles the solution
-2. **Test** - Runs all unit tests with code coverage
-3. **Pack & Publish** - Creates and publishes NuGet packages (master branch)
-4. **Release** - Publishes to NuGet.org (release branch)
-
-### Required Setup
-
-To set up CI/CD for this repository:
-
-1. **CircleCI Context Configuration**
-   - Add `CODECOV_TOKEN_Baubit_Traceability` to `Context_Prashant` context
-   - Configure Docker Hub credentials
-   - Configure GitHub token for package publishing
-
-2. **Codecov Integration**
-   - Import repository at [codecov.io](https://codecov.io)
-   - Copy the Codecov token to CircleCI context
-
-3. **Snyk Integration**
-   - Import repository at [snyk.io](https://snyk.io)
-   - Configure security scanning
-
-4. **GitHub Settings**
-   - Enable branch protection for `master` and `release` branches
-   - Require status checks to pass before merging
-   - Require code review before merging
-
-## Dependencies
-
-- **.NET 9.0** - Target framework
-- **FluentResults 3.16.0** - Core result pattern library
 
 ## License
 
