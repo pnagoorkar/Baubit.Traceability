@@ -1,5 +1,6 @@
 using Baubit.Traceability.Reasons;
 using FluentResults;
+using System.Collections.Generic;
 
 namespace Baubit.Traceability.Successes
 {

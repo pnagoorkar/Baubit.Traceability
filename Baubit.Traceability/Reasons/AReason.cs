@@ -1,13 +1,15 @@
 using FluentResults;
+using System;
+using System.Collections.Generic;
 
 namespace Baubit.Traceability.Reasons
 {
     public abstract class AReason : IReason
     {
-        public virtual string Message { get; init; }
-        public DateTime CreationTime { get; init; } = DateTime.Now;
+        public virtual string Message { get; private set; }
+        public DateTime CreationTime { get; private set; } = DateTime.Now;
 
-        public Dictionary<string, object> Metadata { get; init; }
+        public Dictionary<string, object> Metadata { get; private set; }
         protected AReason(string message, Dictionary<string, object> metadata)
         {
             Message = message;
