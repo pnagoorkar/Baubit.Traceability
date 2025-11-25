@@ -1,15 +1,17 @@
 using FluentResults;
+using System;
+using System.Collections.Generic;
 
 namespace Baubit.Traceability.Errors
 {
     public abstract class AError : IError
     {
-        public DateTime CreationTime { get; init; } = DateTime.Now;
-        public List<IError> Reasons { get; init; } = new List<IError>();
+        public DateTime CreationTime { get; private set; } = DateTime.Now;
+        public List<IError> Reasons { get; private set; } = new List<IError>();
 
-        public virtual string Message { get; init; }
+        public virtual string Message { get; private set; }
 
-        public Dictionary<string, object> Metadata { get; init; }
+        public Dictionary<string, object> Metadata { get; private set; }
 
         protected AError(List<IError> reasons, 
                          string message, 
@@ -19,7 +21,7 @@ namespace Baubit.Traceability.Errors
             Message = message;
             Metadata = metadata;
         }
-        protected AError() : this([], string.Empty, new Dictionary<string, object>())
+        protected AError() : this(new List<IError>(), string.Empty, new Dictionary<string, object>())
         {
 
         }

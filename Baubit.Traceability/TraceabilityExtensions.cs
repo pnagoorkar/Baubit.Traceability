@@ -1,5 +1,9 @@
 using Baubit.Traceability.Exceptions;
 using FluentResults;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Baubit.Traceability
 {
@@ -72,7 +76,7 @@ namespace Baubit.Traceability
         }
         public static TResult GetNonErrors<TResult>(this TResult result, List<IReason> reasons) where TResult : IResultBase
         {
-            result.UnwrapReasons().Bind(unwrapped => Result.Try(() => reasons.AddRange(unwrapped.Where(reas => reas is not IError).ToList())));
+            result.UnwrapReasons().Bind(unwrapped => Result.Try(() => reasons.AddRange(unwrapped.Where(reas => !typeof(IError).IsAssignableFrom(reas.GetType())).ToList())));
             return result;
         }
 
