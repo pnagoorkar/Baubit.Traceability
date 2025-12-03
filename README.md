@@ -256,7 +256,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-This library is part of the [Baubit](https://github.com/pnagoorkar/Baubit) framework ecosystem and was extracted to provide standalone traceability functionality.
+See [ACKNOWLEDGEMENT.md](./ACKNOWLEDGEMENT.md) for details on libraries and ideas that support this project.
 
 ## Support
 
