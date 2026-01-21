@@ -7,7 +7,7 @@
     <File Path="Directory.Build.targets" />
     <File Path="Directory.Packages.props" />
   </Folder>
-  <Project Path="Baubit.Traceability.Tests/Baubit.Traceability.Test.csproj" />
+  <Project Path="Baubit.Traceability.Test\Baubit.Traceability.Test.csproj" />
   <Project Path="Baubit.Traceability\Baubit.Traceability.csproj" />
   <Properties Name="Configuration">
     <Property Name="Debug|AnyCPU" />
