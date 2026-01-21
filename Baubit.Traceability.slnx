@@ -5,6 +5,7 @@
     <File Path="codecov.yml" />
     <File Path="Directory.Build.props" />
     <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
   </Folder>
   <Project Path="Baubit.Traceability.Tests/Baubit.Traceability.Test.csproj" />
   <Project Path="Baubit.Traceability\Baubit.Traceability.csproj" />
