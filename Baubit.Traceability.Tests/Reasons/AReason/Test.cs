@@ -1,4 +1,4 @@
-﻿namespace Baubit.Traceability.Tests.Reasons.AReason
+﻿namespace Baubit.Traceability.Test.Reasons.AReason
 {
     public class Test
     {

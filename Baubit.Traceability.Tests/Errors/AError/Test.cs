@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace Baubit.Traceability.Tests.Errors.AError
+namespace Baubit.Traceability.Test.Errors.AError
 {
     public class Test
     {

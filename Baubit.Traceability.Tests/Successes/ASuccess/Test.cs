@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace Baubit.Traceability.Tests.Successes.ASuccess
+namespace Baubit.Traceability.Test.Successes.ASuccess
 {
     public class Test
     {

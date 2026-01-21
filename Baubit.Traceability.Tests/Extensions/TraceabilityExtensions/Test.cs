@@ -3,7 +3,7 @@ using Baubit.Traceability.Reasons;
 using Baubit.Traceability.Successes;
 using FluentResults;
 
-namespace Baubit.Traceability.Tests.Extensions.TraceabilityExtensions
+namespace Baubit.Traceability.Test.Extensions.TraceabilityExtensions
 {
     public class Test
     {
