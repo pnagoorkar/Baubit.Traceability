@@ -25,7 +25,6 @@ namespace Baubit.Traceability.Test.Errors.AError
             Assert.Empty(error.Reasons);
             Assert.Equal(string.Empty, error.Message);
             Assert.NotNull(error.Metadata);
-            Assert.NotNull(error.CreationTime);
         }
 
         [Fact]
@@ -43,14 +42,13 @@ namespace Baubit.Traceability.Test.Errors.AError
             Assert.Equal(2, error.Reasons.Count);
             Assert.Equal(message, error.Message);
             Assert.Equal(metadata, error.Metadata);
-            Assert.NotNull(error.CreationTime);
         }
 
         [Fact]
         public void ParameterizedConstructor_HandlesNullReasons()
         {
             // Arrange
-            List<IError> reasons = null;
+            List<IError> reasons = null!;
             var message = "Test message";
             var metadata = new Dictionary<string, object>();
 

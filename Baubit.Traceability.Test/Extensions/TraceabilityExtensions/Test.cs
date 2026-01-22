@@ -359,7 +359,7 @@ namespace Baubit.Traceability.Test.Extensions.TraceabilityExtensions
             Assert.True(nonErrorsResult.IsSuccess);
             var nonErrors = nonErrorsResult.Value;
             Assert.Equal(2, nonErrors.Count);
-            Assert.All(nonErrors, r => Assert.IsNotType<IError>(r));
+            Assert.All(nonErrors, r => Assert.IsNotAssignableFrom<IError>(r));
         }
 
         [Fact]
@@ -376,7 +376,7 @@ namespace Baubit.Traceability.Test.Extensions.TraceabilityExtensions
 
             // Assert
             Assert.Single(reasons);
-            Assert.IsNotType<IError>(reasons[0]);
+            Assert.IsNotAssignableFrom<IError>(reasons[0]);
         }
 
         #endregion
@@ -440,7 +440,7 @@ namespace Baubit.Traceability.Test.Extensions.TraceabilityExtensions
             // Arrange
             var result = Result.Fail("Test")
                 .WithReason(new TestReason("Reason 1"));
-            List<IReason> reasons = null;
+            List<IReason> reasons = null!;
 
             // Act
             result.UnwrapReasons(reasons);

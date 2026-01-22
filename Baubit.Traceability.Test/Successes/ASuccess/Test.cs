@@ -24,7 +24,6 @@ namespace Baubit.Traceability.Test.Successes.ASuccess
             Assert.NotNull(success);
             Assert.Equal(string.Empty, success.Message);
             Assert.NotNull(success.Metadata);
-            Assert.NotNull(success.CreationTime);
         }
 
         [Fact]
@@ -40,7 +39,6 @@ namespace Baubit.Traceability.Test.Successes.ASuccess
             // Assert
             Assert.Equal(message, success.Message);
             Assert.Equal(metadata, success.Metadata);
-            Assert.NotNull(success.CreationTime);
         }
 
         [Fact]

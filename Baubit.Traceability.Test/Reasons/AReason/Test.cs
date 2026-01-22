@@ -22,7 +22,6 @@
             Assert.NotNull(reason);
             Assert.Equal(string.Empty, reason.Message);
             Assert.NotNull(reason.Metadata);
-            Assert.NotNull(reason.CreationTime);
         }
 
         [Fact]
@@ -38,7 +37,6 @@
             // Assert
             Assert.Equal(message, reason.Message);
             Assert.Equal(metadata, reason.Metadata);
-            Assert.NotNull(reason.CreationTime);
         }
 
         [Fact]
