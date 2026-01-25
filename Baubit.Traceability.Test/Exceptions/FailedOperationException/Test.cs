@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace Baubit.Traceability.Tests.Exceptions.FailedOperationException
+namespace Baubit.Traceability.Test.Exceptions.FailedOperationException
 {
     public class Test
     {
