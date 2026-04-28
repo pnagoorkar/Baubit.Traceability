@@ -141,7 +141,11 @@ jobs:
       #- run: docker version
       #- run: docker info
   
-      # Install .NET SDK (fast, no sudo/repos needed)
+      # Install .NET SDK
+      # DOTNET_ROOT must be set explicitly so that global tools (e.g. coverlet.console) can
+      # locate the runtime. Without it, tools fail with "Failed to resolve libhostfxr.so".
+      # PATH is prepended (not appended) so the freshly-installed dotnet takes priority over
+      # any older system-installed dotnet on the ubuntu-2204 machine image.
       - run: |
           curl -sSL https://dot.net/v1/dotnet-install.sh -o dotnet-install.sh
           bash dotnet-install.sh --channel 9.0
@@ -161,6 +165,14 @@ jobs:
             fi
 
             dotnet build ${TEST_PROJECT} --configuration Release
+
+            # xUnit v3 (OutputType=Exe) runs via Microsoft Testing Platform (MTP).
+            # Using --collect:"XPlat Code Coverage" forces dotnet test into VSTest mode,
+            # which launches the test process with --info. MTP-based runners do not
+            # recognise --info and emit an error string instead of JSON, causing:
+            #   "Test process did not return valid JSON (non-object)"
+            # Fix: use coverlet.console (global tool) to wrap the process externally
+            # so coverage is collected without involving VSTest data collectors.
             dotnet tool install --global coverlet.console
             mkdir -p ./TestResults
             coverlet "./${PROJECT_NAME}.Test/bin/Release/net9.0/${PROJECT_NAME}.Test.dll" \
@@ -172,6 +184,8 @@ jobs:
       - run:
           name: Upload Coverage to Codecov
           command: |
+            # coverlet.console writes to the exact path given by --output,
+            # so the location is fixed. Unlike VSTest collectors, there is no GUID subdirectory.
             COVERAGE_FILE="./TestResults/coverage.opencover.xml"
 
             if [ ! -f "$COVERAGE_FILE" ]; then
@@ -246,10 +260,6 @@ jobs:
               echo "export SOLUTION_FOLDER=$SOLUTION_FOLDER" >> "$BASH_ENV"
               echo "export PROJECT_NAME=$PROJECT_NAME" >> "$BASH_ENV"
       - checkout
-
-      - run:
-          name: Check for ignored files
-          command: check_for_processable_changes
           
       - run:
           name: Add github as a nuget package source
